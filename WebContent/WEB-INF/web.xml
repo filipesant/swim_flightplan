@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>flightPlanWs</display-name>
+  <listener>
+    <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>flightPlanWs</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>flightPlanWs</servlet-name>
+    <url-pattern>/FlightPlanWS</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>120</session-timeout>
+  </session-config>
+  <servlet>
+    <display-name>Flight</display-name>
+    <servlet-name>Flight</servlet-name>
+    <servlet-class>org.jboss.samples.webservices.FlightPlan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Flight</servlet-name>
+    <url-pattern>/Flight</url-pattern>
+  </servlet-mapping>
+</web-app>
